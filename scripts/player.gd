@@ -131,6 +131,7 @@ func _physics_process(delta: float) -> void:
 			if node.get_parent().has_meta("shark"):
 				AIR = 0
 				lose_air.emit(AIR)
+				$Chomp.play()
 		var normal = collision.get_normal()
 		if abs(normal.x) > 0.5:
 			if normal.x > 0 and Input.is_action_just_pressed("move_kick"):
@@ -141,9 +142,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func add_air(air) :
-	AIR += air
-	lose_air.emit(AIR)
-	$Air.play()
+	if AIR != 0:
+		AIR += air
+		lose_air.emit(AIR)
+		$Air.play()
 
 @export var projectile_scene: PackedScene
 func shoot():

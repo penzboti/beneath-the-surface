@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bgppfwync4lv7" path="res://sounds/Oops.mp3" id="13_jej6c"]
 [ext_resource type="AudioStream" uid="uid://c1cci58ahllg" path="res://sounds/Whiz.mp3" id="14_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="15_oprun"]
+[ext_resource type="AudioStream" uid="uid://bg7tvn2o0eolj" path="res://sounds/Chomp.wav" id="16_a8ls1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
 
@@ -342,6 +343,9 @@ spread = 86.59
 gravity = Vector2(0, 100)
 initial_velocity_max = 159.57
 angular_velocity_max = 99.57
+
+[node name="Chomp" type="AudioStreamPlayer2D" parent="." unique_id=1233374857]
+stream = ExtResource("16_a8ls1")
 
 [connection signal="lose_air" from="." to="CanvasLayer/AirBar" method="_on_player_lose_air"]
 
