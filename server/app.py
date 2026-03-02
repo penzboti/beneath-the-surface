@@ -169,7 +169,7 @@ def leaderboard_html():
         
         for i, score in enumerate(lvl_scores, 1):
             time = score.get('time', 0)
-            date = score.get('date', '')[:10]
+            date = score.get('date', '')
             html += f"        <tr><td>{i}</td><td>{time:.2f}s</td><td>{date}</td></tr>\n"
             
         html += "    </table>\n"
