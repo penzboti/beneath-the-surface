@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="2_quee7"]
 [ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/player.tscn" id="3_thj0k"]
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="4_quee7"]
-[ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://new_sprite_frames.tres" id="5_cmd5o"]
+[ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://sprites/portal/portal.tres" id="5_cmd5o"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="6_cmd5o"]
 
 [sub_resource type="GDScript" id="GDScript_cmd5o"]

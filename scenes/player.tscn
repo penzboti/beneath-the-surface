@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h8nf5whtpn74" path="res://sprites/fish/Idling Actions/normalidle.png" id="7_02ce8"]
 [ext_resource type="Texture2D" uid="uid://kwjy6fnvrjwm" path="res://sprites/fish/Normal Actions/normalswim.png" id="8_k6j2k"]
 [ext_resource type="Texture2D" uid="uid://fsjhfhqxayo0" path="res://sprites/fish/Normal Actions/normalswimdiagup.png" id="9_12fny"]
-[ext_resource type="PackedScene" uid="uid://drvd42ixgbq2o" path="res://scenes/AirBar.tscn" id="11_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://drvd42ixgbq2o" path="res://scenes/oxygen.tscn" id="11_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://bbavqcp5pmjke" path="res://sounds/powerUp.wav" id="12_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://bgppfwync4lv7" path="res://sounds/Oops.mp3" id="13_jej6c"]
 [ext_resource type="AudioStream" uid="uid://c1cci58ahllg" path="res://sounds/Whiz.mp3" id="14_f1ej7"]

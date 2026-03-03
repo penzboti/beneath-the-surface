@@ -17,8 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MusicManager2="*uid://ds7ypgjo6fdi5"
-MusicManager="*uid://dhts76ltbbtx5"
 Leaderboard="*res://scripts/leaderboard.gd"
 
 [editor_plugins]

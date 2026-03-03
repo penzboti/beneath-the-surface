@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs34ctv1lymsv"
-path="res://.godot/imported/bubbles.png-faf3aad33a62207e1aaa89795b7ab44d.ctex"
+uid="uid://cevkcvie3718m"
+path="res://.godot/imported/trident.png-89cf001fd8c73e7274d2c8a98a060f50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bubbles.png"
-dest_files=["res://.godot/imported/bubbles.png-faf3aad33a62207e1aaa89795b7ab44d.ctex"]
+source_file="res://sprites/trident/trident.png"
+dest_files=["res://.godot/imported/trident.png-89cf001fd8c73e7274d2c8a98a060f50.ctex"]
 
 [params]
 
