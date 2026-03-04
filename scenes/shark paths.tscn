@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da7asg8cikc7f"]
 
-[ext_resource type="PackedScene" uid="uid://yo42itcb456t" path="res://scenes/Shark.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/shark.tscn" id="1_errlg"]
 [ext_resource type="Script" uid="uid://c3opcahusdxfy" path="res://scripts/follow_path.gd" id="2_bl13t"]
 
 [sub_resource type="Curve2D" id="Curve2D_errlg"]

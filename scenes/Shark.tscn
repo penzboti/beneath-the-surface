@@ -71,17 +71,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Shark" type="Node2D" unique_id=14928866]
+[node name="Area2D" type="Area2D" unique_id=1964655107]
 script = ExtResource("1_pd6do")
-metadata/shark = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1017520103]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1396178069]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396178069]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pd6do")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1230974641]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1230974641]
 position = Vector2(-1, 4)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_r22x4")

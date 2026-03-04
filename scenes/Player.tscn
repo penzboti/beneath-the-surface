@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bx71cfkcmklrm" path="res://scripts/player.gd" id="1_m3dpg"]
 [ext_resource type="Texture2D" uid="uid://deubaiq34q8fb" path="res://sprites/fish/Normal Actions/normalchomp.png" id="2_f7jdm"]
-[ext_resource type="PackedScene" uid="uid://bv5mk58humv7e" path="res://scenes/trident.tscn" id="2_y4r1p"]
+[ext_resource type="PackedScene" uid="uid://bv5mk58humv7e" path="res://scenes/Trident.tscn" id="2_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://onhpo6arc3np" path="res://sprites/fish/Normal Actions/normaltiltdownchomp.PNG" id="3_nqgys"]
 [ext_resource type="Texture2D" uid="uid://mwmr0rs3pby6" path="res://sprites/fish/Normal Actions/normaltiltupchomp.png" id="4_c6dsb"]
 [ext_resource type="Texture2D" uid="uid://b8t6ac4uwlapm" path="res://sprites/fish/Normal Actions/Fishieouch.png" id="5_d7bii"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h8nf5whtpn74" path="res://sprites/fish/Idling Actions/normalidle.png" id="7_02ce8"]
 [ext_resource type="Texture2D" uid="uid://kwjy6fnvrjwm" path="res://sprites/fish/Normal Actions/normalswim.png" id="8_k6j2k"]
 [ext_resource type="Texture2D" uid="uid://fsjhfhqxayo0" path="res://sprites/fish/Normal Actions/normalswimdiagup.png" id="9_12fny"]
-[ext_resource type="PackedScene" uid="uid://drvd42ixgbq2o" path="res://scenes/oxygen.tscn" id="11_d2wvv"]
+[ext_resource type="PackedScene" uid="uid://drvd42ixgbq2o" path="res://scenes/OxygenBar.tscn" id="11_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://bbavqcp5pmjke" path="res://sounds/powerUp.wav" id="12_3v2ag"]
 [ext_resource type="AudioStream" uid="uid://bgppfwync4lv7" path="res://sounds/Oops.mp3" id="13_jej6c"]
 [ext_resource type="AudioStream" uid="uid://c1cci58ahllg" path="res://sounds/Whiz.mp3" id="14_f1ej7"]
@@ -299,38 +299,40 @@ unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_qfm1y")
 animation = &"up"
 
-[node name="Trident" parent="PlayerSprite" unique_id=1359295957 instance=ExtResource("2_y4r1p")]
-rotation = 0.24609143
-scale = Vector2(1.5, 1.5)
-script = null
-
-[node name="CollisionShape2D" parent="PlayerSprite/Trident/CharacterBody2D" parent_id_path=PackedInt32Array(1359295957, 335486890) index="0" unique_id=1864270336]
-disabled = true
-
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1110791031]
 limit_bottom = 768
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=977003766]
+[node name="TridentIndicator" parent="." unique_id=1359295957 instance=ExtResource("2_y4r1p")]
+rotation = 0.24609143
+scale = Vector2(1.5, 1.5)
+script = null
 
-[node name="AirBar" parent="CanvasLayer" unique_id=2144031877 instance=ExtResource("11_d2wvv")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="CollisionShape2D" parent="TridentIndicator" index="0" unique_id=1864270336]
+disabled = true
 
-[node name="Air" type="AudioStreamPlayer2D" parent="." unique_id=23549067]
+[node name="UI" type="CanvasLayer" parent="." unique_id=977003766]
+
+[node name="OxygenBar" parent="UI" unique_id=2144031877 instance=ExtResource("11_d2wvv")]
+
+[node name="SFX" type="Node" parent="." unique_id=617234042]
+
+[node name="Air" type="AudioStreamPlayer2D" parent="SFX" unique_id=23549067]
 stream = ExtResource("12_3v2ag")
 
-[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=1206598326]
+[node name="Die" type="AudioStreamPlayer2D" parent="SFX" unique_id=1206598326]
 stream = ExtResource("13_jej6c")
 
-[node name="Throw" type="AudioStreamPlayer2D" parent="." unique_id=616432414]
+[node name="Throw" type="AudioStreamPlayer2D" parent="SFX" unique_id=616432414]
 stream = ExtResource("14_f1ej7")
 
-[node name="DashParticle" type="CPUParticles2D" parent="." unique_id=217719729]
+[node name="Chomp" type="AudioStreamPlayer2D" parent="SFX" unique_id=1233374857]
+stream = ExtResource("16_a8ls1")
+
+[node name="Particles" type="Node" parent="." unique_id=2026821034]
+
+[node name="DashParticle" type="CPUParticles2D" parent="Particles" unique_id=217719729]
 emitting = false
 texture = ExtResource("15_oprun")
 lifetime = 0.5
@@ -344,9 +346,4 @@ gravity = Vector2(0, 100)
 initial_velocity_max = 159.57
 angular_velocity_max = 99.57
 
-[node name="Chomp" type="AudioStreamPlayer2D" parent="." unique_id=1233374857]
-stream = ExtResource("16_a8ls1")
-
-[connection signal="lose_air" from="." to="CanvasLayer/AirBar" method="_on_player_lose_air"]
-
-[editable path="PlayerSprite/Trident"]
+[editable path="TridentIndicator"]

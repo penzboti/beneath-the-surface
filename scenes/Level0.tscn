@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bd5w8184lxg3q"]
 
-[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/parallax.tscn" id="1_5a2uh"]
-[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/player.tscn" id="2_xuf1b"]
+[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_5a2uh"]
+[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="2_xuf1b"]
 [ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://sprites/portal/portal.tres" id="3_5a2uh"]
 [ext_resource type="Script" uid="uid://c3opcahusdxfy" path="res://scripts/follow_path.gd" id="4_dpr5n"]
 [ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/Shark.tscn" id="5_oxm3q"]
@@ -76,6 +76,10 @@ script = ExtResource("4_dpr5n")
 [node name="Shark" parent="two point path shark/PathFollow2D" unique_id=14928866 instance=ExtResource("5_oxm3q")]
 position = Vector2(-0.0791589, -0.32279348)
 scale = Vector2(-1, 1)
+circle = null
+radius = null
+seconds = null
+flip_on_half_point = null
 
 [node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("6_bbv6a")]
 position = Vector2(1231, 68)
@@ -102,7 +106,9 @@ tile_map_data = PackedByteArray("AAAAAPv/AAACACUAAAAAAPz/AAACACUAAAAAAP3/AAACACU
 position = Vector2(811, 113)
 scale = Vector2(0.5625, 0.5546874)
 circle = true
+radius = null
 seconds = 3
+flip_on_half_point = null
 
 [node name="Bubble2" parent="." unique_id=1286789054 instance=ExtResource("6_bbv6a")]
 position = Vector2(1513, 28)

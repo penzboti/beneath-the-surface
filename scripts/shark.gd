@@ -1,11 +1,13 @@
+# change this to animatedbody?
+
 extends Node2D
 
 @export var circle: bool = false
 @export var radius: int = 100;
 @export var seconds: int = 10;
 @export var flip_on_half_point = true;
-@onready var char: CharacterBody2D = $CharacterBody2D
-@onready var anim: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var char: Area2D = $'.'
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 var timer: float = 0
 
@@ -13,8 +15,7 @@ var timer: float = 0
 func _ready() -> void:
 	anim.play("default")
 	if circle:
-		char.position += Vector2(radius, 0)
-	pass # Replace with function body.
+		char.global_position += Vector2(radius, 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

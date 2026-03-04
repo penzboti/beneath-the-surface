@@ -23,7 +23,7 @@ signal lose_air(air) # amúgy ez bármilyen levegőváltozás, nem csak lose
 func _ready() -> void:
 	timer_label = Label.new()
 	timer_label.name = "TimerLabel"
-	$CanvasLayer.add_child(timer_label)
+	$UI.add_child(timer_label)
 	timer_label.add_theme_font_size_override("font_size", 24)
 	
 	var system_font = SystemFont.new()
@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 		mouse_held = false
 		shoot()
 		can_trident = false
-		$PlayerSprite/Trident.visible = false
+		$TridentIndicator.visible = false
 		trident_timer = 0
 	
 	# doing timer stuff
@@ -78,10 +78,10 @@ func _process(delta: float) -> void:
 			lose_air.emit(AIR)
 			if AIR <= 0 and not dying:
 				dying = true
-				$Die.play()
+				$SFX/Die.play()
 				set_physics_process(false)
 				visible = false
-				await $Die.finished
+				await $SFX/Die.finished
 				get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	else:
 		AIR = 10
@@ -89,7 +89,7 @@ func _process(delta: float) -> void:
 	
 	if trident_timer > max_trident_timer:
 		can_trident = true
-		$PlayerSprite/Trident.visible = true
+		$TridentIndicator.visible = true
 
 func _physics_process(delta: float) -> void:
 	# handle gravity with low terminal velocity
@@ -122,7 +122,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = JUMP_VELOCITY*2.4 * -direction
 		AIR -= 1
 		lose_air.emit(AIR)
-		$DashParticle.emitting = true
+		#$DashParticle.emitting = true
 	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -145,7 +145,7 @@ func add_air(air) :
 	if AIR != 0:
 		AIR += air
 		lose_air.emit(AIR)
-		$Air.play()
+		$SFX/Air.play()
 
 @export var projectile_scene: PackedScene
 func shoot():
@@ -163,7 +163,7 @@ func shoot():
 	
 	# Add to root scene so it doesn't move with the player
 	get_tree().root.add_child(projectile)
-	$Throw.play()
+	$SFX/Throw.play()
 
 func finish_level():
 	submit_score()
