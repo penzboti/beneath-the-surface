@@ -9,14 +9,17 @@ height = 19.333338
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=335486890]
 scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_u5arg")
 metadata/trident = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1864270336]
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_557qm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=715051184]
 position = Vector2(1.17346644e-07, -1.3333334)
 rotation = -0.78539824
+scale = Vector2(2, 2)
 texture = ExtResource("1_v6yn2")

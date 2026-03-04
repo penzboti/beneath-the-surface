@@ -14,24 +14,15 @@ var mouse_held: bool = true
 var air_timer: float = 0;
 var trident_timer: float = 0;
 var level_time: float = 0;
-var timer_label: Label
 var dying: bool = false
 var score_submitted: bool = false
 
 signal lose_air(air) # amúgy ez bármilyen levegőváltozás, nem csak lose
 
+@onready var timer_label: Label = $"UI/Timer"
+
 func _ready() -> void:
-	timer_label = Label.new()
-	timer_label.name = "TimerLabel"
-	$UI.add_child(timer_label)
-	timer_label.add_theme_font_size_override("font_size", 24)
-	
-	var system_font = SystemFont.new()
-	system_font.font_names = ["Monospace"]
-	timer_label.add_theme_font_override("font", system_font)
-	
-	timer_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT, Control.PRESET_MODE_MINSIZE, 20)
-	timer_label.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	pass
 
 func _process(delta: float) -> void:
 	level_time += delta
@@ -70,7 +61,11 @@ func _process(delta: float) -> void:
 	# doing timer stuff
 	air_timer += delta
 	if !can_trident: trident_timer += delta
+	if trident_timer > max_trident_timer:
+		can_trident = true
+		$TridentIndicator.visible = true
 	
+	# water surface
 	if position.y > 0:
 		if air_timer > max_air_timer/10.0:
 			AIR-=1
@@ -86,10 +81,6 @@ func _process(delta: float) -> void:
 	else:
 		AIR = 10
 		lose_air.emit(AIR)
-	
-	if trident_timer > max_trident_timer:
-		can_trident = true
-		$TridentIndicator.visible = true
 
 func _physics_process(delta: float) -> void:
 	# handle gravity with low terminal velocity
@@ -104,7 +95,6 @@ func _physics_process(delta: float) -> void:
 		# friction sideways
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	
 	if Input.is_action_pressed("move_down") and velocity.y < MAX_SPEED: # increase descent speed over terminal velocity
 		velocity.y += SPEED
 	elif velocity.y > MAX_SPEED*0.5: # slow down descent to terminal velocity
@@ -160,7 +150,7 @@ func shoot():
 	projectile.rotation = direction.angle() + PI / 2
 
 	projectile.direction = direction
-	
+
 	# Add to root scene so it doesn't move with the player
 	get_tree().root.add_child(projectile)
 	$SFX/Throw.play()

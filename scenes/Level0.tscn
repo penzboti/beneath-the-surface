@@ -169,6 +169,6 @@ text = "Because you can't always surface,
 there are some bubbles scattered around.
 You can go trough them, or throw your trident."
 
-[node name="Area2D" parent="." unique_id=1934961117 instance=ExtResource("8_5a2uh")]
+[node name="Goal" parent="." unique_id=1934961117 instance=ExtResource("8_5a2uh")]
 position = Vector2(3019, 69)
 next_scene = ExtResource("9_xuf1b")

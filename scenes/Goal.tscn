@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 [sub_resource type="CircleShape2D" id="CircleShape2D_3id6j"]
 radius = 33.01515
 
-[node name="Area2D" type="Area2D" unique_id=1934961117]
+[node name="Goal" type="Area2D" unique_id=1934961117]
 script = SubResource("GDScript_sos67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619836345]

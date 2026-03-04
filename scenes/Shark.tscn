@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bdl6omg2h6sc2" path="res://scripts/shark.gd" id="1_pd6do"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pd6do"]
-radius = 26.88
-height = 84.6
+radius = 19.0
+height = 80.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pd6do"]
 atlas = ExtResource("1_2066b")
@@ -72,13 +72,16 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D" unique_id=1964655107]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_pd6do")
+metadata/shark = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396178069]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pd6do")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1230974641]
-position = Vector2(-1, 4)
+position = Vector2(-2, 3)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_r22x4")
