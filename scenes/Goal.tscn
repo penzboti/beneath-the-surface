@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d0kw8bnwau844"]
+
+[ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://sprites/portal/portal.tres" id="1_grq7m"]
+
+[sub_resource type="GDScript" id="GDScript_sos67"]
+script/source = "extends Area2D
+
+@export var next_scene: PackedScene = preload(\"res://scenes/Main.tscn\")
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method(\"finish_level\"):
+		await body.finish_level()
+	get_tree().change_scene_to_packed(next_scene)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3id6j"]
+radius = 33.01515
+
+[node name="Area2D" type="Area2D" unique_id=1934961117]
+script = SubResource("GDScript_sos67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=619836345]
+shape = SubResource("CircleShape2D_3id6j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1599491289]
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("1_grq7m")
+autoplay = "default"
+frame_progress = 0.30949655
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

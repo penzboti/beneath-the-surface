@@ -2,36 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_5a2uh"]
 [ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="2_xuf1b"]
-[ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://sprites/portal/portal.tres" id="3_5a2uh"]
 [ext_resource type="Script" uid="uid://c3opcahusdxfy" path="res://scripts/follow_path.gd" id="4_dpr5n"]
 [ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/Shark.tscn" id="5_oxm3q"]
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="6_bbv6a"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="7_pjxhx"]
+[ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_5a2uh"]
 [ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="8_045en"]
-
-[sub_resource type="GDScript" id="GDScript_wq5kw"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.has_method(\"finish_level\"):
-		await body.finish_level()
-	get_tree().change_scene_to_file(\"res://scenes/Level1.tscn\")
-"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_e3ham"]
-radius = 25.847391
+[ext_resource type="PackedScene" uid="uid://4h8f04mkdl33" path="res://scenes/Level1.tscn" id="9_xuf1b"]
 
 [sub_resource type="Curve2D" id="Curve2D_rn4u1"]
 _data = {
@@ -45,22 +22,6 @@ point_count = 3
 
 [node name="Player" parent="." unique_id=1465391525 instance=ExtResource("2_xuf1b")]
 position = Vector2(123, -160)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1141350354]
-position = Vector2(449, 298)
-scale = Vector2(1.0089285, 1)
-script = SubResource("GDScript_wq5kw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=851886496]
-position = Vector2(2559.1506, -217)
-shape = SubResource("CircleShape2D_e3ham")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=481885623]
-position = Vector2(2558.1597, -217.00002)
-scale = Vector2(0.15, 0.15)
-sprite_frames = ExtResource("3_5a2uh")
-autoplay = "default"
-frame_progress = 0.30949655
 
 [node name="two point path shark" type="Path2D" parent="." unique_id=1405095463]
 position = Vector2(520, 130)
@@ -208,4 +169,6 @@ text = "Because you can't always surface,
 there are some bubbles scattered around.
 You can go trough them, or throw your trident."
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Area2D" parent="." unique_id=1934961117 instance=ExtResource("8_5a2uh")]
+position = Vector2(3019, 69)
+next_scene = ExtResource("9_xuf1b")
