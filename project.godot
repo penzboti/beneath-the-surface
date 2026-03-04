@@ -15,9 +15,14 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ddl4sq17xsnqi"
+
 [autoload]
 
 Leaderboard="*res://scripts/leaderboard.gd"
+Music="*uid://cpwo443nx6ah8"
 
 [editor_plugins]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/parallax.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="2_0wfyh"]
-[ext_resource type="Script" path="res://scripts/exit.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bhben5urehj7n" path="res://scripts/exit.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://bapjxcmihb25o" path="res://scripts/start.gd" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=725332422]
