@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pd6do"]
 radius = 19.0
-height = 80.0
+height = 74.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pd6do"]
 atlas = ExtResource("1_2066b")
@@ -78,6 +78,7 @@ script = ExtResource("1_pd6do")
 metadata/shark = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396178069]
+position = Vector2(-2, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pd6do")
 
