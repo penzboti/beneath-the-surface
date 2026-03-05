@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 func _physics_process(_delta: float) -> void:
 	# move
-	char.velocity = direction.normalized() * speed*5
+	char.velocity = direction.normalized() * speed*7
 	char.move_and_slide()
 	
 	# check for wall collisions

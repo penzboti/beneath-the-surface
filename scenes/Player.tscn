@@ -293,6 +293,7 @@ font = SubResource("SystemFont_srp4u")
 font_size = 24
 
 [node name="Player" type="CharacterBody2D" unique_id=1465391525]
+collision_layer = 5
 script = ExtResource("1_m3dpg")
 projectile_scene = ExtResource("2_y4r1p")
 metadata/player = true
@@ -335,7 +336,7 @@ grow_horizontal = 0
 label_settings = SubResource("LabelSettings_jfpux")
 horizontal_alignment = 2
 
-[node name="SFX" type="Node" parent="." unique_id=617234042]
+[node name="SFX" type="Node2D" parent="." unique_id=1732113610]
 
 [node name="Air" type="AudioStreamPlayer2D" parent="SFX" unique_id=23549067]
 stream = ExtResource("12_3v2ag")

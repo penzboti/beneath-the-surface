@@ -2,6 +2,8 @@
 
 extends Node2D
 
+# change movement to animatablebody?
+
 @export var circle: bool = false
 @export var radius: int = 100;
 @export var seconds: int = 10;
@@ -15,8 +17,7 @@ var timer: float = 0
 func _ready() -> void:
 	anim.play("default")
 	if circle:
-		char.global_position += Vector2(radius, 0)
-
+		global_position += Vector2(radius, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,3 +30,10 @@ func _process(delta: float) -> void:
 	if circle:
 		rotation += delta*2*PI/seconds
 		anim.global_rotation = 0
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_meta("player"):
+		body.add_air(-10)
+	if body.has_meta("trident"):
+		self.queue_free()
