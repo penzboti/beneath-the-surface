@@ -1,9 +1,22 @@
 [gd_scene format=4 uid="uid://ddtntwhdei6tu"]
 
 [ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_rarhs"]
-[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="2_vcsgt"]
-[ext_resource type="Script" uid="uid://bhben5urehj7n" path="res://scripts/exit.gd" id="3_c01mt"]
-[ext_resource type="Script" uid="uid://bapjxcmihb25o" path="res://scripts/start.gd" id="4_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="2_vcsgt"]
+
+[sub_resource type="GDScript" id="GDScript_0bbpv"]
+resource_name = "exit"
+script/source = "extends TextureButton
+
+func _on_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id="GDScript_rvslj"]
+script/source = "extends TextureButton
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://levels/Level0.tscn\")
+"
 
 [node name="Main" type="Node2D" unique_id=725332422]
 
@@ -18,14 +31,14 @@ offset_left = 599.0
 offset_top = 330.0
 offset_right = 726.0
 offset_bottom = 457.0
-script = ExtResource("3_c01mt")
+script = SubResource("GDScript_0bbpv")
 
 [node name="StartButton" type="TextureButton" parent="." unique_id=1992239570]
 offset_left = 409.0
 offset_top = 332.0
 offset_right = 536.0
 offset_bottom = 457.0
-script = ExtResource("4_nxtc6")
+script = SubResource("GDScript_rvslj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1919441851]
 position = Vector2(581, 286)

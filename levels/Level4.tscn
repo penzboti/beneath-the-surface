@@ -1,62 +1,62 @@
 [gd_scene format=4 uid="uid://cqutdo0p5e63g"]
 
 [ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_p7dpe"]
-[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="2_eoiwq"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="2_eoiwq"]
 [ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="3_bejdq"]
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="7_ylbeq"]
 [ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_bejdq"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="8_eoiwq"]
-[ext_resource type="PackedScene" uid="uid://bd67x47xao4dy" path="res://scenes/Level6.tscn" id="9_bejdq"]
+[ext_resource type="PackedScene" uid="uid://bd67x47xao4dy" path="res://levels/Level6.tscn" id="9_bejdq"]
 [ext_resource type="PackedScene" uid="uid://b2xk21ich34ad" path="res://scenes/SharkPath.tscn" id="10_q1ln4"]
 
-[sub_resource type="Curve2D" id="Curve2D_eoiwq"]
+[sub_resource type="Curve2D" id="Curve2D_vf7bx"]
 _data = {
 "points": PackedVector2Array(6.763314e-15, 55.228474, -6.763314e-15, -55.228474, -100, 1.22460635e-14, -55.228474, 1.0144971e-14, 55.228474, -1.0144971e-14, -1.8369095e-14, -100, -1.3526628e-14, -55.228474, 1.3526628e-14, 55.228474, 100, -2.4492127e-14, 55.228474, -1.6908285e-14, -55.228474, 1.6908285e-14, 3.061516e-14, 100, 2.0289942e-14, 55.228474, -2.0289942e-14, -55.228474, -100, 3.673819e-14)
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_q1ln4"]
+[sub_resource type="Curve2D" id="Curve2D_g2dj0"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 247, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_2xrsv"]
+[sub_resource type="Curve2D" id="Curve2D_a84uq"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ylbeq"]
+[sub_resource type="Curve2D" id="Curve2D_4pch3"]
 _data = {
 "points": PackedVector2Array(6.763314e-15, 55.228474, -6.763314e-15, -55.228474, -100, 1.22460635e-14, -55.228474, 1.0144971e-14, 55.228474, -1.0144971e-14, -1.8369095e-14, -100, -1.3526628e-14, -55.228474, 1.3526628e-14, 55.228474, 100, -2.4492127e-14, 55.228474, -1.6908285e-14, -55.228474, 1.6908285e-14, 3.061516e-14, 100, 2.0289942e-14, 55.228474, -2.0289942e-14, -55.228474, -100, 3.673819e-14)
 }
 point_count = 5
 
-[sub_resource type="Curve2D" id="Curve2D_gduov"]
+[sub_resource type="Curve2D" id="Curve2D_yisop"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_h0lsg"]
+[sub_resource type="Curve2D" id="Curve2D_6eg67"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_6mm7a"]
+[sub_resource type="Curve2D" id="Curve2D_nurn8"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ru3g5"]
+[sub_resource type="Curve2D" id="Curve2D_mcv5s"]
 _data = {
 "points": PackedVector2Array(1.0144971e-14, 82.84271, -1.0144971e-14, -82.84271, -150, 1.8369095e-14, -82.84271, 1.5217457e-14, 82.84271, -1.5217457e-14, -2.7553643e-14, -150, -2.0289942e-14, -82.84271, 2.0289942e-14, 82.84271, 150, -3.673819e-14, 82.84271, -2.5362428e-14, -82.84271, 2.5362428e-14, 4.5922738e-14, 150, 3.0434914e-14, 82.84271, -3.0434914e-14, -82.84271, -150, 5.5107286e-14)
 }
@@ -77,24 +77,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAACACUAAAAAAAEAAAACACUAAAAAAAIAAAACACU
 
 [node name="Player" parent="." unique_id=1465391525 instance=ExtResource("3_bejdq")]
 position = Vector2(123, -160)
-
-[node name="PlayerCamera" parent="Player" index="2" unique_id=1110791031]
-limit_bottom = 930
-
-[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("7_ylbeq")]
-position = Vector2(812, 785)
-
-[node name="Bubble3" parent="." unique_id=659372014 instance=ExtResource("7_ylbeq")]
-position = Vector2(532.00006, 344)
-
-[node name="Bubble4" parent="." unique_id=1607642312 instance=ExtResource("7_ylbeq")]
-position = Vector2(1450, 671)
-
-[node name="Bubble5" parent="." unique_id=1888003869 instance=ExtResource("7_ylbeq")]
-position = Vector2(1516, 122)
-
-[node name="Bubble7" parent="." unique_id=722724521 instance=ExtResource("7_ylbeq")]
-position = Vector2(1442, 860)
+limit_bottom = 928
 
 [node name="BubbleParticle" type="CPUParticles2D" parent="." unique_id=994037956]
 emitting = false
@@ -111,54 +94,67 @@ gravity = Vector2(0, 100)
 initial_velocity_max = 159.57
 angular_velocity_max = 99.57
 
-[node name="Area2D" parent="." unique_id=1934961117 instance=ExtResource("8_bejdq")]
+[node name="Goal" parent="." unique_id=1934961117 instance=ExtResource("8_bejdq")]
 position = Vector2(1679, 353)
 next_scene = ExtResource("9_bejdq")
 
+[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("7_ylbeq")]
+position = Vector2(812, 785)
+
+[node name="Bubble3" parent="." unique_id=659372014 instance=ExtResource("7_ylbeq")]
+position = Vector2(532.00006, 344)
+
+[node name="Bubble4" parent="." unique_id=1607642312 instance=ExtResource("7_ylbeq")]
+position = Vector2(1450, 671)
+
+[node name="Bubble5" parent="." unique_id=1888003869 instance=ExtResource("7_ylbeq")]
+position = Vector2(1516, 122)
+
+[node name="Bubble7" parent="." unique_id=722724521 instance=ExtResource("7_ylbeq")]
+position = Vector2(1442, 860)
+
 [node name="SharkPath" parent="." unique_id=796605821 instance=ExtResource("10_q1ln4")]
 position = Vector2(267, 428)
-curve = SubResource("Curve2D_eoiwq")
+curve = SubResource("Curve2D_vf7bx")
 mode = 1
 travel_time = 5.0
 
 [node name="SharkPath2" parent="." unique_id=1707329032 instance=ExtResource("10_q1ln4")]
 position = Vector2(418, 342)
-curve = SubResource("Curve2D_q1ln4")
+curve = SubResource("Curve2D_g2dj0")
 travel_time = 5.0
 
 [node name="SharkPath3" parent="." unique_id=630830540 instance=ExtResource("10_q1ln4")]
 position = Vector2(863, 346)
-curve = SubResource("Curve2D_2xrsv")
+curve = SubResource("Curve2D_a84uq")
 travel_time = 5.0
 
 [node name="SharkPath4" parent="." unique_id=1916676141 instance=ExtResource("10_q1ln4")]
 position = Vector2(1220, 667)
-curve = SubResource("Curve2D_ylbeq")
+curve = SubResource("Curve2D_4pch3")
 mode = 1
-travel_time = 5.0
+travel_time = 4.0
 
 [node name="SharkPath5" parent="." unique_id=1633684302 instance=ExtResource("10_q1ln4")]
 position = Vector2(1321, 566)
-curve = SubResource("Curve2D_gduov")
+curve = SubResource("Curve2D_yisop")
 travel_time = 7.0
 
 [node name="SharkPath6" parent="." unique_id=59118447 instance=ExtResource("10_q1ln4")]
 position = Vector2(1376, 119)
-curve = SubResource("Curve2D_h0lsg")
+curve = SubResource("Curve2D_6eg67")
 travel_time = 7.0
 
 [node name="SharkPath7" parent="." unique_id=1400393013 instance=ExtResource("10_q1ln4")]
 position = Vector2(644, 805)
-curve = SubResource("Curve2D_6mm7a")
+curve = SubResource("Curve2D_nurn8")
 travel_time = 5.0
 
 [node name="SharkPath8" parent="." unique_id=1747521371 instance=ExtResource("10_q1ln4")]
 position = Vector2(1217, 226)
-curve = SubResource("Curve2D_ru3g5")
+curve = SubResource("Curve2D_mcv5s")
 mode = 1
-travel_time = 7.0
+travel_time = 5.0
 radius = 150.0
 
 [editable path="Parallax"]
-[editable path="Player"]
-[editable path="Player/TridentIndicator"]

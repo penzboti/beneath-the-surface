@@ -23,10 +23,13 @@ var trident_timer: float = 0;
 var level_time: float = 0;
 var dying: bool = false
 var score_submitted: bool = false
+# 768 for paralax-1 and 928 for paralax-2
+@export_range(768,928) var limit_bottom: int = 768
 
 @onready var timer_label: Label = $"UI/Timer"
 
 func _ready() -> void:
+	$PlayerCamera.limit_bottom = limit_bottom
 	pass
 
 func _process(delta: float) -> void:
@@ -140,14 +143,14 @@ func set_air(air):
 		change_air.emit(AIR)
 
 func shoot():
-	var muzzle = global_position
+	var muzzle: Vector2 = global_position
 	var projectile = projectile_scene.instantiate()
 	
 	# Calculate direction from muzzle to mouse
 	var direction: Vector2 = (get_global_mouse_position() - muzzle).normalized()
 	
 		# Set projectile position and rotation
-	projectile.global_position = muzzle
+	projectile.global_position = muzzle + (direction * 10)
 	projectile.rotation = direction.angle() + PI / 2
 
 	projectile.direction = direction

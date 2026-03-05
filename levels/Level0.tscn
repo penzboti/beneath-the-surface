@@ -2,45 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_5a2uh"]
 [ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="2_xuf1b"]
-[ext_resource type="Script" uid="uid://c3opcahusdxfy" path="res://scripts/follow_path.gd" id="4_dpr5n"]
 [ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/Shark.tscn" id="5_oxm3q"]
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="6_bbv6a"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="7_pjxhx"]
 [ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_5a2uh"]
-[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="8_045en"]
-[ext_resource type="PackedScene" uid="uid://4h8f04mkdl33" path="res://scenes/Level1.tscn" id="9_xuf1b"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="8_045en"]
+[ext_resource type="PackedScene" uid="uid://4h8f04mkdl33" path="res://levels/Level1.tscn" id="9_xuf1b"]
 
-[sub_resource type="Curve2D" id="Curve2D_rn4u1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -79.72845, -4.0630417, 0.5818939, 0.2958603, -0.5818939, -0.2958603, 172.46017, -5, 0, 0, 0, 0, -79.72845, -4.0630417)
-}
-point_count = 3
-
-[node name="Level0" type="Node2D" unique_id=2047788421]
+[node name="TUTORIAL TO REWRITE" type="Node2D" unique_id=2047788421]
 
 [node name="Parallax" parent="." unique_id=1852961584 instance=ExtResource("1_5a2uh")]
 
 [node name="Player" parent="." unique_id=1465391525 instance=ExtResource("2_xuf1b")]
 position = Vector2(123, -160)
-
-[node name="two point path shark" type="Path2D" parent="." unique_id=1405095463]
-position = Vector2(520, 130)
-scale = Vector2(1.0089285, 1)
-curve = SubResource("Curve2D_rn4u1")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="two point path shark" unique_id=877389433]
-position = Vector2(-79.72845, -4.0630417)
-rotation = 0.0018026861
-rotates = false
-script = ExtResource("4_dpr5n")
-
-[node name="Shark" parent="two point path shark/PathFollow2D" unique_id=14928866 instance=ExtResource("5_oxm3q")]
-position = Vector2(-0.0791589, -0.32279348)
-scale = Vector2(-1, 1)
-circle = null
-radius = null
-seconds = null
-flip_on_half_point = null
 
 [node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("6_bbv6a")]
 position = Vector2(1231, 68)
@@ -66,10 +40,6 @@ tile_map_data = PackedByteArray("AAAAAPv/AAACACUAAAAAAPz/AAACACUAAAAAAP3/AAACACU
 [node name="CirclingShark" parent="." unique_id=638292415 instance=ExtResource("5_oxm3q")]
 position = Vector2(811, 113)
 scale = Vector2(0.5625, 0.5546874)
-circle = true
-radius = null
-seconds = 3
-flip_on_half_point = null
 
 [node name="Bubble2" parent="." unique_id=1286789054 instance=ExtResource("6_bbv6a")]
 position = Vector2(1513, 28)

@@ -340,14 +340,18 @@ horizontal_alignment = 2
 
 [node name="Air" type="AudioStreamPlayer2D" parent="SFX" unique_id=23549067]
 stream = ExtResource("12_3v2ag")
+volume_db = -13.542
 
 [node name="Die" type="AudioStreamPlayer2D" parent="SFX" unique_id=1206598326]
 stream = ExtResource("13_jej6c")
+volume_db = -8.0
 
 [node name="Throw" type="AudioStreamPlayer2D" parent="SFX" unique_id=616432414]
 stream = ExtResource("14_f1ej7")
+volume_db = -2.0
 
 [node name="Chomp" type="AudioStreamPlayer2D" parent="SFX" unique_id=1233374857]
+visible = false
 stream = ExtResource("16_a8ls1")
 
 [node name="Particles" type="Node" parent="." unique_id=2026821034]
@@ -372,6 +376,7 @@ scale = Vector2(1, 1)
 script = null
 
 [node name="CollisionShape2D" parent="TridentIndicator" index="0" unique_id=1864270336]
+visible = false
 disabled = true
 
 [connection signal="change_air" from="." to="UI/OxygenBar" method="_on_player_change_air"]
