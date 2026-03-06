@@ -1,44 +1,50 @@
 extends CharacterBody2D
 
+# air
 @export var AIR: int = 10;
 @export var max_air_timer: int = 10;
-@export var max_trident_timer: int = 10;
-var can_trident = true
+var air_timer: float = 0;
+signal change_air(air)
 
+# movement
 const SPEED = 10.0
 const MAX_SPEED = 200.0 # sideways. double of terminal velocity
 const JUMP_VELOCITY = -200.0
 const GRAVITY = 300.0
 
-var mouse_held: bool = true
-var air_timer: float = 0;
+# trident
+@export var projectile_scene: PackedScene
+@export var max_trident_timer: int = 10;
+var can_trident = true
+var mouse_held: bool = true # unwritten
 var trident_timer: float = 0;
+
+# level
 var level_time: float = 0;
-var timer_label: Label
 var dying: bool = false
 var score_submitted: bool = false
+# 768 for paralax-1 and 928 for paralax-2
+@export_range(768,928) var limit_bottom: int = 768
 
-signal lose_air(air) # amúgy ez bármilyen levegőváltozás, nem csak lose
+@onready var timer_label: Label = $"UI/Timer"
 
 func _ready() -> void:
-	timer_label = Label.new()
-	timer_label.name = "TimerLabel"
-	$CanvasLayer.add_child(timer_label)
-	timer_label.add_theme_font_size_override("font_size", 24)
-	
-	var system_font = SystemFont.new()
-	system_font.font_names = ["Monospace"]
-	timer_label.add_theme_font_override("font", system_font)
-	
-	timer_label.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT, Control.PRESET_MODE_MINSIZE, 20)
-	timer_label.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+	$PlayerCamera.limit_bottom = limit_bottom
+	pass
 
 func _process(delta: float) -> void:
+	# timers
 	level_time += delta
 	var minutes = int(level_time / 60)
 	var seconds = int(level_time) % 60
 	var msecs = int(fmod(level_time * 1000, 1000))
 	timer_label.text = "Time: %02d:%02d.%03d" % [minutes, seconds, msecs]
+	
+	air_timer += delta
+	if !can_trident: trident_timer += delta
+	if trident_timer > max_trident_timer:
+		can_trident = true
+		$TridentIndicator.visible = true
 	
 	# animations
 	if abs(velocity.y) < 20:
@@ -64,32 +70,19 @@ func _process(delta: float) -> void:
 		mouse_held = false
 		shoot()
 		can_trident = false
-		$PlayerSprite/Trident.visible = false
+		$TridentIndicator.visible = false
 		trident_timer = 0
-	
-	# doing timer stuff
-	air_timer += delta
-	if !can_trident: trident_timer += delta
-	
+
+	# air
 	if position.y > 0:
+		# underwater
 		if air_timer > max_air_timer/10.0:
-			AIR-=1
-			air_timer = 0
-			lose_air.emit(AIR)
-			if AIR <= 0 and not dying:
-				dying = true
-				$Die.play()
-				set_physics_process(false)
-				visible = false
-				await $Die.finished
-				get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+			add_air(-1)
+		if AIR <= 0 and not dying:
+			die()
 	else:
-		AIR = 10
-		lose_air.emit(AIR)
-	
-	if trident_timer > max_trident_timer:
-		can_trident = true
-		$PlayerSprite/Trident.visible = true
+		# water surface
+		set_air(10)
 
 func _physics_process(delta: float) -> void:
 	# handle gravity with low terminal velocity
@@ -104,7 +97,6 @@ func _physics_process(delta: float) -> void:
 		# friction sideways
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	
 	if Input.is_action_pressed("move_down") and velocity.y < MAX_SPEED: # increase descent speed over terminal velocity
 		velocity.y += SPEED
 	elif velocity.y > MAX_SPEED*0.5: # slow down descent to terminal velocity
@@ -121,17 +113,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and position.y > 0:
 		velocity.x = JUMP_VELOCITY*2.4 * -direction
 		AIR -= 1
-		lose_air.emit(AIR)
-		$DashParticle.emitting = true
+		#$DashParticle.emitting = true
 	
+	# wallkick
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		var node = collision.get_collider()
-		if node != null:
-			if node.get_parent().has_meta("shark"):
-				AIR = 0
-				lose_air.emit(AIR)
-				$Chomp.play()
 		var normal = collision.get_normal()
 		if abs(normal.x) > 0.5:
 			if normal.x > 0 and Input.is_action_just_pressed("move_kick"):
@@ -143,27 +129,35 @@ func _physics_process(delta: float) -> void:
 	
 func add_air(air) :
 	if AIR != 0:
+		air_timer = 0
 		AIR += air
-		lose_air.emit(AIR)
-		$Air.play()
+		if AIR > 10: AIR = 10
+		change_air.emit(AIR)
+		if air > 0:
+			$SFX/Air.play()
 
-@export var projectile_scene: PackedScene
+func set_air(air):
+	if AIR != 0:
+		air_timer = 0
+		AIR = air
+		change_air.emit(AIR)
+
 func shoot():
-	var muzzle = global_position
+	var muzzle: Vector2 = global_position
 	var projectile = projectile_scene.instantiate()
 	
 	# Calculate direction from muzzle to mouse
 	var direction: Vector2 = (get_global_mouse_position() - muzzle).normalized()
 	
 		# Set projectile position and rotation
-	projectile.global_position = muzzle
+	projectile.global_position = muzzle + (direction * 10)
 	projectile.rotation = direction.angle() + PI / 2
 
 	projectile.direction = direction
-	
+
 	# Add to root scene so it doesn't move with the player
 	get_tree().root.add_child(projectile)
-	$Throw.play()
+	$SFX/Throw.play()
 
 func finish_level():
 	submit_score()
@@ -191,3 +185,11 @@ func submit_score() -> void:
 			print("Player ERROR: Leaderboard missing submit_score method")
 	else:
 		print("Player ERROR: Could not find /root/Leaderboard node!")
+
+func die():
+	dying = true
+	$SFX/Die.play()
+	set_physics_process(false)
+	visible = false
+	await $SFX/Die.finished
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)

@@ -9,7 +9,6 @@ var air = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	display_bar()
-	
 	pass # Replace with function body.
 
 
@@ -22,7 +21,7 @@ func display_bar():
 		list[i].visible = i >= (list.size() - air)
 
 
-func _on_player_lose_air(new_air: Variant) -> void:
+func _on_player_change_air(new_air: Variant) -> void:
 	air = new_air
 	display_bar()
 	pass # Replace with function body.

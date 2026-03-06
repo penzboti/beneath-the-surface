@@ -11,15 +11,18 @@ config_version=5
 [application]
 
 config/name="beneath the surface"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ddl4sq17xsnqi"
+
 [autoload]
 
-MusicManager2="*uid://ds7ypgjo6fdi5"
-MusicManager="*uid://dhts76ltbbtx5"
 Leaderboard="*res://scripts/leaderboard.gd"
+Music="*uid://cpwo443nx6ah8"
 
 [editor_plugins]
 

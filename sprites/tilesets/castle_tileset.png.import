@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu04l4vbco5e0"
-path="res://.godot/imported/castle_tileset_part1.png-417cdb675a0a97d6a03cc3a7725d1a6d.ctex"
+path="res://.godot/imported/castle_tileset.png-3ceedb90a18e68a11e79f7a154fcdf34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/castle_tileset_part1.png"
-dest_files=["res://.godot/imported/castle_tileset_part1.png-417cdb675a0a97d6a03cc3a7725d1a6d.ctex"]
+source_file="res://sprites/tilesets/castle_tileset.png"
+dest_files=["res://.godot/imported/castle_tileset.png-3ceedb90a18e68a11e79f7a154fcdf34.ctex"]
 
 [params]
 

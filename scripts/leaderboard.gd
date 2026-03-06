@@ -1,5 +1,7 @@
 extends Node
 
+var send: bool = false # if we want to turn it off somewhere in code (like tutorial)
+
 const SERVER_URL := "https://save.temp.olio.ovh"
 const LEADERBOARD_URL := "https://save.temp.olio.ovh/leaderboard"
 const SECRET := "underwater_"
@@ -8,6 +10,7 @@ var _is_web_build: bool = OS.has_feature("web")
 
 ## Submit score silently (fire and forget, no waiting, no UI)
 func submit_score(name: String, time: float) -> void:
+	if !send: return
 	print("Leaderboard: submit_score called with name: ", name, ", time: ", time)
 	var score_data := {
 		"name": name,

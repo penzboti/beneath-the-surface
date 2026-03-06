@@ -1,41 +1,41 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://b0u18s36pj4ub"]
 
-[ext_resource type="Texture2D" uid="uid://b22dlm6eptnre" path="res://sprites/portal/portal-sheet.png" id="1_o5qi2"]
+[ext_resource type="Texture2D" uid="uid://b22dlm6eptnre" path="res://sprites/portal/portal-sheet.png" id="1_3ju7h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuf1b"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(0, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxrqx"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(498, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpr5n"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(996, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oxm3q"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(1494, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbv6a"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(1992, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjxhx"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(2490, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_045en"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(2988, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wq5kw"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(3486, 0, 498, 498)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3ham"]
-atlas = ExtResource("1_o5qi2")
+atlas = ExtResource("1_3ju7h")
 region = Rect2(3984, 0, 498, 498)
 
 [resource]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b2xk21ich34ad"]
+
+[ext_resource type="Script" uid="uid://iyqy1oodq6ck" path="res://scripts/shark_path.gd" id="1_02rmm"]
+[ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/Shark.tscn" id="3_l2xwk"]
+
+[sub_resource type="Curve2D" id="Curve2D_y1run"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300, 0)
+}
+point_count = 2
+
+[node name="SharkPath" type="Path2D" unique_id=796605821]
+curve = SubResource("Curve2D_y1run")
+script = ExtResource("1_02rmm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1356772778]
+rotates = false
+loop = false
+
+[node name="Shark" parent="PathFollow2D" unique_id=1964655107 instance=ExtResource("3_l2xwk")]
+position = Vector2(-0.0791589, -0.32279348)
+scale = Vector2(-1, 1)

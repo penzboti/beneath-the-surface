@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpwo443nx6ah8"]
+
+[ext_resource type="AudioStream" uid="uid://dhhepwstcdu4t" path="res://sounds/New Super Mario Bros. 2 - Underwater ♪ [duRDiRKjwgc].mp3" id="1_0j54u"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=1173616825]
+stream = ExtResource("1_0j54u")
+autoplay = true
+mix_target = 2
+bus = &"Music"
+parameters/looping = true

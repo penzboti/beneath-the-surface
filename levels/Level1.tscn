@@ -1,88 +1,30 @@
 [gd_scene format=4 uid="uid://4h8f04mkdl33"]
 
-[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/parallax.tscn" id="1_odhdn"]
-[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/player.tscn" id="2_bwv4p"]
-[ext_resource type="PackedScene" uid="uid://5c60y4sbapxb" path="res://scenes/Shark.tscn" id="3_dw26h"]
-[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/tile_map.tscn" id="3_odhdn"]
-[ext_resource type="SpriteFrames" uid="uid://b0u18s36pj4ub" path="res://new_sprite_frames.tres" id="4_ecr63"]
-[ext_resource type="Script" uid="uid://c3opcahusdxfy" path="res://scripts/follow_path.gd" id="4_lrl65"]
+[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_odhdn"]
+[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="2_bwv4p"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="3_odhdn"]
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="7_svatc"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="8_ecr63"]
+[ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_n34uq"]
+[ext_resource type="PackedScene" uid="uid://bciyvknwdytkk" path="res://levels/Level5.tscn" id="9_n34uq"]
+[ext_resource type="PackedScene" uid="uid://b2xk21ich34ad" path="res://scenes/SharkPath.tscn" id="10_kbo48"]
 
-[sub_resource type="GDScript" id="GDScript_76388"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.has_method(\"finish_level\"):
-		await body.finish_level()
-	get_tree().change_scene_to_file(\"res://scenes/Level3.tscn\")
-"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_76388"]
-radius = 25.847391
-
-[sub_resource type="Curve2D" id="Curve2D_lrl65"]
+[sub_resource type="Curve2D" id="Curve2D_ecr63"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -79.72845, -4.0630417, 0.5818939, 0.2958603, -0.5818939, -0.2958603, 172.46017, -5, 0, 0, 0, 0, -79.72845, -4.0630417)
+"points": PackedVector2Array(0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 271, 0)
 }
-point_count = 3
+point_count = 2
 
 [node name="Level1" type="Node2D" unique_id=567930489]
 
 [node name="Parallax" parent="." unique_id=1852961584 instance=ExtResource("1_odhdn")]
 
-[node name="Player" parent="." unique_id=1465391525 instance=ExtResource("2_bwv4p")]
-position = Vector2(123, -160)
-
 [node name="TileMap" parent="." unique_id=71163937 instance=ExtResource("3_odhdn")]
 tile_map_data = PackedByteArray("AAAAAPv/AAADAAMAAAAAAPz/AAADAAMAAAAAAP3/AAADAAMAAAAAAP7/AAADAAMAAAAAAP//AAADAAMAAAAFAPv/AAADAAMAAAAFAPz/AAADAAMAAAAFAP3/AAADAAMAAAAFAP7/AAADAAMAAAAFAP//AAADAAMAAAAFAPr/AAADAAMAAAAFAPn/AAADAAMAAAAFAPj/AAADAAMAAAAFAPf/AAADAAMAAAAFAPb/AAADAAMAAAAFAPX/AAADAAMAAAAFAPT/AAADAAMAAAAAAPT/AAADAAMAAAAAAPX/AAADAAMAAAAAAPb/AAADAAMAAAAAAPf/AAADAAMAAAAAAPj/AAADAAMAAAAAAPn/AAADAAMAAAAAAPr/AAADAAMAAAAAAAAAAAADAAMAAAAAAAEAAAADAAMAAAABAAEAAAADAAMAAAABAAIAAAADAAMAAAACAAIAAAADAAMAAAACAAMAAAADAAMAAAADAAMAAAADAAMAAAADAAQAAAADAAMAAAAEAAQAAAADAAMAAAAFAAQAAAADAAMAAAAFAAAAAAADAAMAAAAFAAEAAAADAAMAAAAGAAEAAAADAAMAAAAGAAIAAAADAAMAAAAGAAQAAAADAAMAAAAHAAIAAAADAAMAAAAIAAIAAAADAAMAAAAJAAIAAAADAAMAAAAKAAIAAAADAAMAAAALAAIAAAADAAMAAAAHAAQAAAADAAMAAAAIAAQAAAADAAMAAAAJAAQAAAADAAMAAAAJAAUAAAADAAMAAAAJAAYAAAADAAMAAAAJAAcAAAADAAMAAAAJAAgAAAADAAMAAAALAAMAAAADAAMAAAALAAQAAAADAAMAAAALAAUAAAADAAMAAAALAAYAAAADAAMAAAALAAcAAAADAAMAAAAJAAkAAAADAAMAAAAJAAoAAAADAAMAAAAKAAoAAAADAAMAAAALAAoAAAADAAMAAAAMAAoAAAADAAMAAAANAAoAAAADAAMAAAAOAAoAAAADAAMAAAAPAAoAAAADAAMAAAAPAAcAAAADAAMAAAAPAAYAAAADAAMAAAAPAAUAAAADAAMAAAAPAAQAAAADAAMAAAAMAAcAAAADAAMAAAANAAcAAAADAAMAAAANAAYAAAADAAMAAAANAAUAAAADAAMAAAANAAQAAAADAAMAAAANAAMAAAADAAMAAAANAAIAAAADAAMAAAANAAEAAAADAAMAAAANAAAAAAADAAMAAAAPAAAAAAADAAMAAAAPAAEAAAADAAMAAAAPAAIAAAADAAMAAAAPAAMAAAADAAMAAAAQAAcAAAADAAMAAAARAAcAAAADAAMAAAASAAcAAAADAAMAAAATAAcAAAADAAMAAAAUAAcAAAADAAMAAAAVAAcAAAADAAMAAAAWAAcAAAADAAMAAAAXAAcAAAADAAMAAAAYAAcAAAADAAMAAAAZAAcAAAADAAMAAAAZAAYAAAADAAMAAAAaAAYAAAADAAMAAAAaAAUAAAADAAMAAAAbAAUAAAADAAMAAAAbAAQAAAADAAMAAAAcAAQAAAADAAMAAAAcAAMAAAADAAMAAAAdAAIAAAADAAMAAAAeAAIAAAADAAMAAAAeAAEAAAADAAMAAAAfAAEAAAADAAMAAAAfAAAAAAADAAMAAAAjAAEAAAADAAMAAAAjAAIAAAADAAMAAAAiAAIAAAADAAMAAAAiAAMAAAADAAMAAAAhAAQAAAADAAMAAAAgAAUAAAADAAMAAAAfAAUAAAADAAMAAAAfAAYAAAADAAMAAAAeAAYAAAADAAMAAAAeAAcAAAADAAMAAAAdAAcAAAADAAMAAAAdAAgAAAADAAMAAAAdAAMAAAADAAMAAAAgAAAAAAADAAMAAAAhAAMAAAADAAMAAAAkAAAAAAADAAMAAAAkAAEAAAADAAMAAAAgAAQAAAADAAMAAAAcAAgAAAADAAMAAAAQAAoAAAADAAMAAAARAAoAAAADAAMAAAASAAoAAAADAAMAAAATAAoAAAADAAMAAAAUAAoAAAADAAMAAAAVAAoAAAADAAMAAAAWAAoAAAADAAMAAAAXAAoAAAADAAMAAAAYAAoAAAADAAMAAAAZAAoAAAADAAMAAAAZAAsAAAADAAMAAAAZAAwAAAADAAMAAAAZAA0AAAADAAMAAAAaAA0AAAADAAMAAAAbAA0AAAADAAMAAAAcAA0AAAADAAMAAAAdAA0AAAADAAMAAAAeAA0AAAADAAMAAAAfAA0AAAADAAMAAAAcAAkAAAADAAMAAAAcAAoAAAADAAMAAAAdAAoAAAADAAMAAAAeAAoAAAADAAMAAAAfAAoAAAADAAMAAAAgAAoAAAADAAMAAAAhAAoAAAADAAMAAAAiAAoAAAADAAMAAAAgAA0AAAADAAMAAAAhAA0AAAADAAMAAAAiAA0AAAADAAMAAAAjAA0AAAADAAMAAAAkAA0AAAADAAMAAAAlAA0AAAADAAMAAAAlAA4AAAADAAMAAAAlAA8AAAADAAMAAAAlABAAAAADAAMAAAAkABAAAAADAAMAAAAjABAAAAADAAMAAAAiABAAAAADAAMAAAAhABAAAAADAAMAAAAgABAAAAADAAMAAAAfABAAAAADAAMAAAAeABAAAAADAAMAAAAdABAAAAADAAMAAAAcABAAAAADAAMAAAAbABAAAAADAAMAAAAaABAAAAADAAMAAAAaABEAAAADAAMAAAAaABIAAAADAAMAAAAaABMAAAADAAMAAAAaABQAAAADAAMAAAAaABUAAAADAAMAAAAaABYAAAADAAMAAAAdABMAAAADAAMAAAAeABMAAAADAAMAAAAfABMAAAADAAMAAAAgABMAAAADAAMAAAAhABMAAAADAAMAAAAiABMAAAADAAMAAAAjABMAAAADAAMAAAAkABMAAAADAAMAAAAlABMAAAADAAMAAAAmABMAAAADAAMAAAAnABMAAAADAAMAAAAoABMAAAADAAMAAAAoABAAAAADAAMAAAAoAA8AAAADAAMAAAAoAA4AAAADAAMAAAAoABEAAAADAAMAAAAoABIAAAADAAMAAAAoAA0AAAADAAMAAAAoAAwAAAADAAMAAAAoAAsAAAADAAMAAAAoAAoAAAADAAMAAAAnAAoAAAADAAMAAAAmAAoAAAADAAMAAAAlAAoAAAADAAMAAAAkAAoAAAADAAMAAAAjAAoAAAADAAMAAAAcABcAAAADAAMAAAAbABcAAAADAAMAAAAaABcAAAADAAMAAAAdABQAAAADAAMAAAAdABUAAAADAAMAAAAdABYAAAADAAMAAAAdABcAAAADAAMAAAAkAP//AAADAAMAAAAkAPv/AAADAAMAAAAkAP7/AAADAAMAAAAkAPz/AAADAAMAAAAkAP3/AAADAAMAAAAgAP//AAADAAMAAAAgAP7/AAADAAMAAAAgAP3/AAADAAMAAAAgAPz/AAADAAMAAAAgAPv/AAADAAMAAAAgAPr/AAADAAMAAAAkAPr/AAADAAMAAAA=")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=571243683]
-position = Vector2(449, 298)
-scale = Vector2(1.0089285, 1)
-script = SubResource("GDScript_76388")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=912080287]
-position = Vector2(440.07083, 407)
-shape = SubResource("CircleShape2D_76388")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=198799365]
-position = Vector2(442.05322, 409)
-scale = Vector2(0.1, 0.1)
-sprite_frames = ExtResource("4_ecr63")
-autoplay = "default"
-frame_progress = 0.29928818
-
-[node name="two point path shark" type="Path2D" parent="." unique_id=1530905196]
-position = Vector2(449, 298)
-scale = Vector2(1.0089285, 1)
-curve = SubResource("Curve2D_lrl65")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="two point path shark" unique_id=751735004]
-position = Vector2(-79.72845, -4.0630417)
-rotation = 0.0018026861
-rotates = false
-script = ExtResource("4_lrl65")
-
-[node name="Shark" parent="two point path shark/PathFollow2D" unique_id=14928866 instance=ExtResource("3_dw26h")]
-position = Vector2(-0.0791589, -0.32279348)
-scale = Vector2(-1, 1)
-
-[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("7_svatc")]
-position = Vector2(1244, 485)
+[node name="Player" parent="." unique_id=1465391525 instance=ExtResource("2_bwv4p")]
+position = Vector2(123, -160)
 
 [node name="BubbleParticle" type="CPUParticles2D" parent="." unique_id=1261436513]
 emitting = false
@@ -99,4 +41,15 @@ gravity = Vector2(0, 100)
 initial_velocity_max = 159.57
 angular_velocity_max = 99.57
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Goal" parent="." unique_id=1934961117 instance=ExtResource("8_n34uq")]
+position = Vector2(894, 699)
+next_scene = ExtResource("9_n34uq")
+
+[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("7_svatc")]
+position = Vector2(1244, 485)
+
+[node name="SharkPath" parent="." unique_id=796605821 instance=ExtResource("10_kbo48")]
+position = Vector2(391, 291)
+curve = SubResource("Curve2D_ecr63")
+lock_linear_path = true
+travel_time = 4.0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxryppcswp36y"]
 
-[ext_resource type="Texture2D" uid="uid://cu04l4vbco5e0" path="res://sprites/castle_tileset_part1.png" id="1_tjuek"]
+[ext_resource type="Texture2D" uid="uid://cu04l4vbco5e0" path="res://sprites/tilesets/castle_tileset.png" id="1_tjuek"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwv4p"]
 texture = ExtResource("1_tjuek")
@@ -1657,7 +1657,7 @@ texture = ExtResource("1_tjuek")
 13:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_odhdn"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 sources/0 = SubResource("TileSetAtlasSource_bwv4p")
 
 [node name="TileMap" type="TileMapLayer" unique_id=71163937]
