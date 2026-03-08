@@ -108,13 +108,7 @@ func _physics_process(delta: float) -> void:
 		# make it go faster if jumping
 		if direction and abs(velocity.x) < MAX_SPEED * 3:
 			velocity.x += SPEED*5 * direction
-	
-	# Handle dash
-	if Input.is_action_just_pressed("dash") and position.y > 0:
-		velocity.x = JUMP_VELOCITY*2.4 * -direction
-		AIR -= 1
-		#$DashParticle.emitting = true
-	
+
 	# wallkick
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
