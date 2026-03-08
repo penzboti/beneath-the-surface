@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="7_pjxhx"]
 [ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_5a2uh"]
 [ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="8_045en"]
-[ext_resource type="PackedScene" uid="uid://4h8f04mkdl33" path="res://levels/Level1.tscn" id="9_xuf1b"]
+[ext_resource type="PackedScene" uid="uid://4h8f04mkdl33" path="res://levels/Alley.tscn" id="9_xuf1b"]
 
 [node name="TUTORIAL TO REWRITE" type="Node2D" unique_id=2047788421]
 

@@ -15,7 +15,7 @@ func _on_pressed() -> void:
 script/source = "extends TextureButton
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://levels/Level0.tscn\")
+	get_tree().change_scene_to_file(\"res://levels/Tutorial.tscn\")
 "
 
 [node name="Main" type="Node2D" unique_id=725332422]

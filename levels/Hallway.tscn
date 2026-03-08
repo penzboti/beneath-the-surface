@@ -6,31 +6,31 @@
 [ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="7_qwp14"]
 [ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="8_0jmjk"]
 [ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="8_xpq2v"]
-[ext_resource type="PackedScene" uid="uid://cqutdo0p5e63g" path="res://levels/Level4.tscn" id="9_0jmjk"]
+[ext_resource type="PackedScene" uid="uid://cqutdo0p5e63g" path="res://levels/Maze.tscn" id="9_0jmjk"]
 [ext_resource type="PackedScene" uid="uid://b2xk21ich34ad" path="res://scenes/SharkPath.tscn" id="10_v8268"]
 
-[sub_resource type="Curve2D" id="Curve2D_xpq2v"]
+[sub_resource type="Curve2D" id="Curve2D_6m74g"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_0jmjk"]
+[sub_resource type="Curve2D" id="Curve2D_qcwkq"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -230, 121)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_v8268"]
+[sub_resource type="Curve2D" id="Curve2D_5pn2a"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 247, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_rcugv"]
+[sub_resource type="Curve2D" id="Curve2D_p5th2"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0)
@@ -77,20 +77,20 @@ position = Vector2(772, 335)
 
 [node name="SharkPath" parent="." unique_id=796605821 instance=ExtResource("10_v8268")]
 position = Vector2(366, 537)
-curve = SubResource("Curve2D_xpq2v")
+curve = SubResource("Curve2D_6m74g")
 travel_time = 5.0
 
 [node name="SharkPath2" parent="." unique_id=1877183859 instance=ExtResource("10_v8268")]
 position = Vector2(591, 360)
-curve = SubResource("Curve2D_0jmjk")
+curve = SubResource("Curve2D_qcwkq")
 travel_time = 5.0
 
 [node name="SharkPath3" parent="." unique_id=1920528810 instance=ExtResource("10_v8268")]
 position = Vector2(367, 293)
-curve = SubResource("Curve2D_v8268")
+curve = SubResource("Curve2D_5pn2a")
 travel_time = 5.0
 
 [node name="SharkPath4" parent="." unique_id=1186092356 instance=ExtResource("10_v8268")]
 position = Vector2(587, 656)
-curve = SubResource("Curve2D_rcugv")
+curve = SubResource("Curve2D_p5th2")
 travel_time = 5.0
