@@ -13,16 +13,24 @@
 
 [node name="parallax-1" type="Node2D" parent="." unique_id=1103408118]
 
+[node name="sky" type="Parallax2D" parent="parallax-1" unique_id=1536414938]
+repeat_size = Vector2(512, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax-1/sky" unique_id=585726318]
+position = Vector2(129, 228)
+scale = Vector2(2, 1)
+texture = ExtResource("5_356xm")
+
 [node name="surface" type="Parallax2D" parent="parallax-1" unique_id=205836938]
 scale = Vector2(4, 4)
-scroll_offset = Vector2(0, 28)
+scroll_offset = Vector2(-973, 13)
 repeat_size = Vector2(256, 0)
-autoscroll = Vector2(20, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax-1/surface" unique_id=233731449]
-position = Vector2(-8.4703295e-22, -104.8)
-scale = Vector2(1, 0.25)
+position = Vector2(4.9999995, -21.25)
+scale = Vector2(1.0039061, 0.05)
 texture = ExtResource("2_tipki")
 centered = false
 
@@ -48,6 +56,7 @@ centered = false
 
 [node name="fg" type="Parallax2D" parent="parallax-1" unique_id=1754584990]
 scale = Vector2(4, 4)
+scroll_offset = Vector2(-3, 25)
 repeat_size = Vector2(512, 0)
 repeat_times = 2
 

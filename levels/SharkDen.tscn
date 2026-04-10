@@ -1,0 +1,374 @@
+[gd_scene format=4 uid="uid://gr0knwd83d3u"]
+
+[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="1_6qwvb"]
+[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="2_dpj73"]
+[ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="3_0r17i"]
+[ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="4_3mfy1"]
+[ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="6_1h0f4"]
+[ext_resource type="PackedScene" uid="uid://b2xk21ich34ad" path="res://scenes/SharkPath.tscn" id="7_w3cf3"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="8_afsjk"]
+
+[sub_resource type="Curve2D" id="Curve2D_6qwvb"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_1d27u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 289.726, -86)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1jclc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 774.65753, -3)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_f471d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 271.2329, 312)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_wadpy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -33.904114, 45, 0, 0, 0, 0, 241.43835, -218)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_iy2ql"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 324.6576, -289)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_qvl76"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 258.90393, 275)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_jchx1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -119.17816, 125, 0, 0, 0, 0, 666.7808, 123)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_rkpp3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 197.26025, -21, 0, 0, 0, 0, 201.36987, 317)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_02y7u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -136.6438, -1, 0, 0, 0, 0, 982.1919, -3)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_bdlbd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 740.7534, -286)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_kyslg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7.1916504, 739)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_oswja"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 195.20557, 250, 0, 0, 0, 0, 961.6438, 510)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_r2dgo"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_dpj73"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_0r17i"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_wcc53"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_3mfy1"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_1h0f4"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_w3cf3"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_f7eeb"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_pat7s"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_gp4fp"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_afsjk"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[node name="A" type="Node2D" unique_id=1206425937]
+
+[node name="Parallax" parent="." unique_id=1852961584 instance=ExtResource("1_6qwvb")]
+
+[node name="parallax-1" parent="Parallax" index="0" unique_id=1103408118]
+visible = false
+
+[node name="parallax-2" parent="Parallax" index="1" unique_id=1874628584]
+visible = true
+
+[node name="Player" parent="." unique_id=1465391525 instance=ExtResource("2_dpj73")]
+position = Vector2(123, -160)
+limit_bottom = 928
+
+[node name="BubbleParticle" type="CPUParticles2D" parent="." unique_id=1685948438]
+emitting = false
+amount = 16
+texture = ExtResource("3_0r17i")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 86.59
+gravity = Vector2(0, 100)
+initial_velocity_max = 159.57
+angular_velocity_max = 99.57
+
+[node name="Goal" parent="." unique_id=1934961117 instance=ExtResource("4_3mfy1")]
+position = Vector2(1084, 881)
+
+[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("6_1h0f4")]
+position = Vector2(827, 875)
+
+[node name="Bubble2" parent="." unique_id=89730579 instance=ExtResource("6_1h0f4")]
+position = Vector2(1745, 781)
+
+[node name="Bubble3" parent="." unique_id=989543816 instance=ExtResource("6_1h0f4")]
+position = Vector2(2881, 608)
+
+[node name="Bubble4" parent="." unique_id=606475554 instance=ExtResource("6_1h0f4")]
+position = Vector2(2443, 142.00003)
+
+[node name="TileMap" parent="." unique_id=71163937 instance=ExtResource("8_afsjk")]
+tile_map_data = PackedByteArray("AAAAAPr/AAADACgAAAAAAPv/AAADACgAAAAAAPz/AAADACgAAAAAAP3/AAADACgAAAAAAP7/AAADACgAAAAAAP//AAADACgAAAAAAAAAAAADACgAAAAAAAEAAAADACgAAAAAAAIAAAADACgAAAAAAAMAAAADACgAAAAAAAQAAAADACgAAAAAAAUAAAADACgAAAAAAAYAAAADACgAAAAAAAcAAAADACgAAAAAAAgAAAADACgAAAAAAAkAAAADACgAAAAAAAoAAAADACgAAAAAAAsAAAADACgAAAAAAAwAAAADACgAAAAAAA0AAAADACgAAAAAAA4AAAADACgAAAAAAA8AAAADACgAAAAAABAAAAADACgAAAAAABEAAAADACgAAAAAABIAAAADACgAAAAAABMAAAADACgAAAAAABQAAAADACgAAAAAABUAAAADACgAAAAAABYAAAADACgAAAAAABcAAAADACgAAAAAABgAAAADACgAAAAAABkAAAADACgAAAAAABoAAAADACgAAAAAABsAAAADACgAAAAAABwAAAADACgAAAAAAB0AAAADACgAAAABAB0AAAADACgAAAACAB0AAAADACgAAAADAB0AAAADACgAAAAEAB0AAAADACgAAAAFAB0AAAADACgAAAAGAB0AAAADACgAAAAHAB0AAAADACgAAAAIAB0AAAADACgAAAAJAB0AAAADACgAAAAKAB0AAAADACgAAAALAB0AAAADACgAAAAMAB0AAAADACgAAAANAB0AAAADACgAAAAOAB0AAAADACgAAAAPAB0AAAADACgAAAAQAB0AAAADACgAAAARAB0AAAADACgAAAASAB0AAAADACgAAAATAB0AAAADACgAAAAUAB0AAAADACgAAAAVAB0AAAADACgAAAAWAB0AAAADACgAAAAXAB0AAAADACgAAAAYAB0AAAADACgAAAAZAB0AAAADACgAAAAaAB0AAAADACgAAAAbAB0AAAADACgAAAAcAB0AAAADACgAAAAdAB0AAAADACgAAAAeAB0AAAADACgAAAAfAB0AAAADACgAAAAgAB0AAAADACgAAAAhAB0AAAADACgAAAAiAB0AAAADACgAAAAjAB0AAAADACgAAAAkAB0AAAADACgAAAAlAB0AAAADACgAAAAmAB0AAAADACgAAAAnAB0AAAADACgAAAAoAB0AAAADACgAAAApAB0AAAADACgAAAAqAB0AAAADACgAAAArAB0AAAADACgAAAAsAB0AAAADACgAAAAtAB0AAAADACgAAAAuAB0AAAADACgAAAAvAB0AAAADACgAAAAwAB0AAAADACgAAAAxAB0AAAADACgAAAAyAB0AAAADACgAAAAzAB0AAAADACgAAAA0AB0AAAADACgAAAA1AB0AAAADACgAAAA2AB0AAAADACgAAAA3AB0AAAADACgAAAA4AB0AAAADACgAAAA5AB0AAAADACgAAAA6AB0AAAADACgAAAA7AB0AAAADACgAAAA8AB0AAAADACgAAAA9AB0AAAADACgAAAA+AB0AAAADACgAAAA/AB0AAAADACgAAABAAB0AAAADACgAAABBAB0AAAADACgAAABCAB0AAAADACgAAABDAB0AAAADACgAAABEAB0AAAADACgAAABFAB0AAAADACgAAABGAB0AAAADACgAAABHAB0AAAADACgAAABIAB0AAAADACgAAABJAB0AAAADACgAAABKAB0AAAADACgAAABLAB0AAAADACgAAABMAB0AAAADACgAAABNAB0AAAADACgAAABOAB0AAAADACgAAABPAB0AAAADACgAAABQAB0AAAADACgAAABRAB0AAAADACgAAABSAB0AAAADACgAAABTAB0AAAADACgAAABUAB0AAAADACgAAABVAB0AAAADACgAAABWAB0AAAADACgAAABXAB0AAAADACgAAABYAB0AAAADACgAAABZAB0AAAADACgAAABaAB0AAAADACgAAABbAB0AAAADACgAAABcAB0AAAADACgAAABdAB0AAAADACgAAABeAB0AAAADACgAAABfAB0AAAADACgAAABgAB0AAAADACgAAABhAB0AAAADACgAAABiAB0AAAADACgAAABiABwAAAADACgAAABiABsAAAADACgAAABiABoAAAADACgAAABiABkAAAADACgAAABiABgAAAADACgAAABiABcAAAADACgAAABiABYAAAADACgAAABiABUAAAADACgAAABiABQAAAADACgAAABiABMAAAADACgAAABiABIAAAADACgAAABiABEAAAADACgAAABiABAAAAADACgAAABiAA8AAAADACgAAABiAA4AAAADACgAAABiAA0AAAADACgAAABiAAwAAAADACgAAABiAAsAAAADACgAAABiAAoAAAADACgAAABiAAkAAAADACgAAABiAAgAAAADACgAAABiAAcAAAADACgAAABiAAYAAAADACgAAABiAAUAAAADACgAAABiAAQAAAADACgAAABiAAMAAAADACgAAABiAAIAAAADACgAAABiAAEAAAADACgAAABiAAAAAAADACgAAABiAP//AAADACgAAABiAP7/AAADACgAAABiAP3/AAADACgAAABiAPz/AAADACgAAABiAPv/AAADACgAAABiAPr/AAADACgAAABiAPn/AAADACgAAAAgAAwAAAADACgAAAAgAAsAAAADACgAAAAfAAsAAAADACgAAAAfAAoAAAADACgAAAAeAAoAAAADACgAAAAeAAkAAAADACgAAAAdAAgAAAADACgAAAAdAAcAAAADACgAAAAdAAYAAAADACgAAAAcAAYAAAADACgAAAAdAAUAAAADACgAAAAdAAQAAAADACgAAAAeAAQAAAADACgAAAAeAAMAAAADACgAAAAfAAMAAAADACgAAAAgAAMAAAADACgAAAAgAAIAAAADACgAAAAhAAIAAAADACgAAAAhAAMAAAADACgAAAAiAAMAAAADACgAAAAiAAQAAAADACgAAAAiAAUAAAADACgAAAAiAAYAAAADACgAAAAjAAQAAAADACgAAAAkAAMAAAADACgAAAAlAAMAAAADACgAAAAmAAMAAAADACgAAAAnAAMAAAADACgAAAAnAAQAAAADACgAAAAoAAQAAAADACgAAAAoAAUAAAADACgAAAAoAAYAAAADACgAAAAoAAcAAAADACgAAAAoAAgAAAADACgAAAAnAAgAAAADACgAAAAnAAkAAAADACgAAAAmAAkAAAADACgAAAAlAAkAAAADACgAAAAkAAkAAAADACgAAAAjAAkAAAADACgAAAAjAAoAAAADACgAAAAiAAoAAAADACgAAAAhAAoAAAADACgAAAAhAAsAAAADACgAAAA0ABQAAAADACgAAAA1ABQAAAADACgAAAA1ABUAAAADACgAAAA2ABUAAAADACgAAAA3ABUAAAADACgAAAA4ABUAAAADACgAAAA4ABQAAAADACgAAAA5ABMAAAADACgAAAA4ABAAAAADACgAAAA3ABAAAAADACgAAAA/AA8AAAADACgAAABAAA8AAAADACgAAABBAA8AAAADACgAAABCAA8AAAADACgAAABDAA8AAAADACgAAABEAA8AAAADACgAAABFAA8AAAADACgAAABFABAAAAADACgAAABEABAAAAADACgAAABEABEAAAADACgAAABDABEAAAADACgAAABDABIAAAADACgAAABCABIAAAADACgAAABCABMAAAADACgAAABBABMAAAADACgAAABAABQAAAADACgAAAA/ABUAAAADACgAAAA+ABUAAAADACgAAAA+ABYAAAADACgAAAA/ABIAAAADACgAAABAABIAAAADACgAAABBABIAAAADACgAAABEABMAAAADACgAAABFABMAAAADACgAAABGABMAAAADACgAAAAPABUAAAADACgAAAAOABYAAAADACgAAAANABcAAAADACgAAAAMABcAAAADACgAAAAMABgAAAADACgAAAALABgAAAADACgAAAALABkAAAADACgAAAAMABYAAAADACgAAAANABgAAAADACgAAAAOABgAAAADACgAAAAPABkAAAADACgAAAALABQAAAADACgAAAALABUAAAADACgAAAATABQAAAADACgAAAATABUAAAADACgAAAATABYAAAADACgAAAATABcAAAADACgAAAATABgAAAADACgAAAAUABQAAAADACgAAAAVABQAAAADACgAAAAVABUAAAADACgAAAAWABUAAAADACgAAAAWABYAAAADACgAAAAWABcAAAADACgAAAAWABgAAAADACgAAAAVABgAAAADACgAAAAUABgAAAADACgAAAAUABkAAAADACgAAAATABkAAAADACgAAAA5ABIAAAADACgAAAA0ABMAAAADACgAAAA0ABIAAAADACgAAAA0ABEAAAADACgAAAA1ABAAAAADACgAAAA2ABAAAAADACgAAAA5ABEAAAADACgAAAAdABwAAAADACgAAAAeABsAAAADACgAAAAfABoAAAADACgAAAAgABkAAAADACgAAAAhABgAAAADACgAAAAiABgAAAADACgAAAAjABcAAAADACgAAAAkABYAAAADACgAAAAlABUAAAADACgAAAAmABQAAAADACgAAAAnABUAAAADACgAAAAoABUAAAADACgAAAApABYAAAADACgAAAAqABYAAAADACgAAAArABcAAAADACgAAAAsABcAAAADACgAAAAtABgAAAADACgAAAAuABgAAAADACgAAAAvABkAAAADACgAAAAwABkAAAADACgAAAAxABoAAAADACgAAAAyABoAAAADACgAAAAzABsAAAADACgAAAA0ABsAAAADACgAAAA9ABYAAAADACgAAAA9ABcAAAADACgAAAA8ABcAAAADACgAAAA8ABgAAAADACgAAAA7ABgAAAADACgAAAA6ABgAAAADACgAAAA6ABkAAAADACgAAAA5ABkAAAADACgAAAA4ABkAAAADACgAAAA4ABoAAAADACgAAAA3ABoAAAADACgAAAA2ABsAAAADACgAAAA1ABsAAAADACgAAAA1AAsAAAADACgAAAA2AAoAAAADACgAAAA3AAkAAAADACgAAAA4AAgAAAADACgAAAA4AAcAAAADACgAAAA5AAYAAAADACgAAAA6AAUAAAADACgAAAA7AAQAAAADACgAAAA8AAMAAAADACgAAAA9AAIAAAADACgAAAA+AAEAAAADACgAAAA/AAAAAAADACgAAAA/AP//AAADACgAAABAAP7/AAADACgAAABBAP3/AAADACgAAABCAPz/AAADACgAAAA2AAsAAAADACgAAAA3AAoAAAADACgAAAA4AAoAAAADACgAAAA5AAoAAAADACgAAAA6AAkAAAADACgAAAA7AAkAAAADACgAAAA8AAkAAAADACgAAAA9AAgAAAADACgAAAA+AAgAAAADACgAAAA/AAgAAAADACgAAABAAAcAAAADACgAAABBAAcAAAADACgAAABCAAcAAAADACgAAABDAAYAAAADACgAAABEAAYAAAADACgAAABFAAYAAAADACgAAABGAAUAAAADACgAAABHAAUAAAADACgAAABIAAUAAAADACgAAABJAAQAAAADACgAAABKAAQAAAADACgAAABLAAQAAAADACgAAABMAAMAAAADACgAAABNAAMAAAADACgAAABOAAMAAAADACgAAABPAAIAAAADACgAAABQAAIAAAADACgAAABRAAIAAAADACgAAABSAAEAAAADACgAAABTAAEAAAADACgAAABUAAEAAAADACgAAABVAAAAAAADACgAAABWAAAAAAADACgAAABXAAAAAAADACgAAABYAP//AAADACgAAABZAP//AAADACgAAABaAP//AAADACgAAABbAP7/AAADACgAAABcAP7/AAADACgAAABdAP7/AAADACgAAABeAP3/AAADACgAAABfAP3/AAADACgAAABgAP3/AAADACgAAABhAPz/AAADACgAAABDAPv/AAADACgAAABEAPr/AAADACgAAABFAPn/AAADACgAAABTAA4AAAADACgAAABUAA4AAAADACgAAABVAA4AAAADACgAAABWAA4AAAADACgAAABXAA4AAAADACgAAABYAA4AAAADACgAAABYAA8AAAADACgAAABYABAAAAADACgAAABYABEAAAADACgAAABYABIAAAADACgAAABYABMAAAADACgAAABXABMAAAADACgAAABWABMAAAADACgAAABVABMAAAADACgAAABUABMAAAADACgAAABTABMAAAADACgAAABTABIAAAADACgAAABTABEAAAADACgAAABTABAAAAADACgAAABTAA8AAAADACgAAABGAA8AAAADACgAAABHAA8AAAADACgAAABHAA4AAAADACgAAABIAA4AAAADACgAAABIAA0AAAADACgAAABJAA0AAAADACgAAABJAAwAAAADACgAAABKAAwAAAADACgAAABLAAwAAAADACgAAABLAAsAAAADACgAAABMAAsAAAADACgAAABNAAsAAAADACgAAABOAAsAAAADACgAAABPAAsAAAADACgAAABQAAsAAAADACgAAABRAAsAAAADACgAAABSAAsAAAADACgAAABSAAwAAAADACgAAABTAAwAAAADACgAAABTAA0AAAADACgAAABaABcAAAADACgAAABaABgAAAADACgAAABZABgAAAADACgAAAA=")
+
+[node name="SharkPath" parent="." unique_id=796605821 instance=ExtResource("7_w3cf3")]
+position = Vector2(391, 291)
+curve = SubResource("Curve2D_6qwvb")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath2" parent="." unique_id=1341994052 instance=ExtResource("7_w3cf3")]
+position = Vector2(90, 115)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_1d27u")
+travel_time = 2.0
+radius = 200.0
+
+[node name="SharkPath10" parent="." unique_id=1214676777 instance=ExtResource("7_w3cf3")]
+position = Vector2(698.00006, 519)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_1jclc")
+radius = 200.0
+
+[node name="SharkPath17" parent="." unique_id=1963750249 instance=ExtResource("7_w3cf3")]
+position = Vector2(771, 397)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_f471d")
+radius = 200.0
+
+[node name="SharkPath20" parent="." unique_id=1875107448 instance=ExtResource("7_w3cf3")]
+position = Vector2(537, 621)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_wadpy")
+radius = 200.0
+
+[node name="SharkPath18" parent="." unique_id=118148614 instance=ExtResource("7_w3cf3")]
+position = Vector2(1040, 687)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_iy2ql")
+radius = 200.0
+
+[node name="SharkPath19" parent="." unique_id=1210815456 instance=ExtResource("7_w3cf3")]
+position = Vector2(1350.0001, 403)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_qvl76")
+radius = 200.0
+
+[node name="SharkPath14" parent="." unique_id=1036485373 instance=ExtResource("7_w3cf3")]
+position = Vector2(268, 757)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_jchx1")
+radius = 200.0
+
+[node name="SharkPath13" parent="." unique_id=1217043120 instance=ExtResource("7_w3cf3")]
+position = Vector2(1350.0001, 109)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_rkpp3")
+radius = 200.0
+
+[node name="SharkPath11" parent="." unique_id=962494708 instance=ExtResource("7_w3cf3")]
+position = Vector2(1327, 907)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_02y7u")
+radius = 200.0
+
+[node name="SharkPath12" parent="." unique_id=1149951785 instance=ExtResource("7_w3cf3")]
+position = Vector2(2140, 396)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_bdlbd")
+radius = 200.0
+
+[node name="SharkPath22" parent="." unique_id=1172229193 instance=ExtResource("7_w3cf3")]
+position = Vector2(2958, 116)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_kyslg")
+radius = 200.0
+
+[node name="SharkPath15" parent="." unique_id=769642103 instance=ExtResource("7_w3cf3")]
+position = Vector2(2140, 396)
+scale = Vector2(0.97333336, 1)
+curve = SubResource("Curve2D_oswja")
+radius = 200.0
+
+[node name="SharkPath6" parent="." unique_id=717516210 instance=ExtResource("7_w3cf3")]
+position = Vector2(391, 291)
+curve = SubResource("Curve2D_r2dgo")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath3" parent="." unique_id=1681849355 instance=ExtResource("7_w3cf3")]
+position = Vector2(391, 291)
+rotation = -1.5707964
+curve = SubResource("Curve2D_dpj73")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath4" parent="." unique_id=1884412441 instance=ExtResource("7_w3cf3")]
+position = Vector2(391, 291)
+rotation = 3.1415927
+curve = SubResource("Curve2D_0r17i")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath16" parent="." unique_id=1855205649 instance=ExtResource("7_w3cf3")]
+position = Vector2(391, 291)
+rotation = 1.5707964
+curve = SubResource("Curve2D_wcc53")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath5" parent="." unique_id=670344930 instance=ExtResource("7_w3cf3")]
+position = Vector2(1111, 243)
+curve = SubResource("Curve2D_3mfy1")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath7" parent="." unique_id=1840996283 instance=ExtResource("7_w3cf3")]
+position = Vector2(1760, 602)
+curve = SubResource("Curve2D_1h0f4")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath8" parent="." unique_id=1722768644 instance=ExtResource("7_w3cf3")]
+position = Vector2(2755, 549)
+curve = SubResource("Curve2D_w3cf3")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath21" parent="." unique_id=1770336697 instance=ExtResource("7_w3cf3")]
+position = Vector2(2473, 707)
+curve = SubResource("Curve2D_f7eeb")
+mode = 1
+lock_linear_path = true
+travel_time = 2.0
+radius = 200.0
+
+[node name="SharkPath23" parent="." unique_id=542604239 instance=ExtResource("7_w3cf3")]
+position = Vector2(2247, 340)
+curve = SubResource("Curve2D_pat7s")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath24" parent="." unique_id=343968260 instance=ExtResource("7_w3cf3")]
+position = Vector2(2616, 253)
+curve = SubResource("Curve2D_gp4fp")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath9" parent="." unique_id=1878097432 instance=ExtResource("7_w3cf3")]
+position = Vector2(529, 729)
+curve = SubResource("Curve2D_afsjk")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[editable path="Parallax"]

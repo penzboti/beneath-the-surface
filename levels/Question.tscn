@@ -1,0 +1,175 @@
+[gd_scene format=4 uid="uid://pev5a4uow0jx"]
+
+[ext_resource type="Texture2D" uid="uid://cvg1ttya24yq1" path="res://sprites/particle/bubble.png" id="1_s4xvi"]
+[ext_resource type="PackedScene" uid="uid://cun06111wnqn1" path="res://scenes/Parallax.tscn" id="2_a7xxg"]
+[ext_resource type="PackedScene" uid="uid://chh3x1guqscc2" path="res://scenes/Player.tscn" id="3_tmhiy"]
+[ext_resource type="PackedScene" uid="uid://d0kw8bnwau844" path="res://scenes/Goal.tscn" id="4_qn2am"]
+[ext_resource type="PackedScene" uid="uid://6slrdyniyw5o" path="res://scenes/Bubble.tscn" id="5_c662y"]
+[ext_resource type="PackedScene" uid="uid://b2xk21ich34ad" path="res://scenes/SharkPath.tscn" id="6_yujt5"]
+[ext_resource type="PackedScene" uid="uid://cxryppcswp36y" path="res://scenes/TileMap.tscn" id="7_w0bum"]
+
+[sub_resource type="Curve2D" id="Curve2D_ilxbu"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_r2dgo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_6qwvb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -99, 127, 0, 0, 0, 0, 213, -46)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_w3cf3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 234, 212)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1h0f4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5, -33, 0, 0, 0, 0, 384, 247)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1d27u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 360, -78)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dpj73"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, -136)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0r17i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 302, 121)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_afsjk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3mfy1"]
+_data = {
+"points": PackedVector2Array(1.3526628e-14, 110.45695, -1.3526628e-14, -110.45695, -200, 2.4492127e-14, -110.45695, 2.0289942e-14, 110.45695, -2.0289942e-14, -3.673819e-14, -200, -2.7053257e-14, -110.45695, 2.7053257e-14, 110.45695, 200, -4.8984254e-14, 110.45695, -3.381657e-14, -110.45695, 3.381657e-14, 6.123032e-14, 200, 4.0579885e-14, 110.45695, -4.0579885e-14, -110.45695, -200, 7.347638e-14)
+}
+point_count = 5
+
+[node name="A" type="Node2D" unique_id=118274723]
+
+[node name="BubbleParticle" type="CPUParticles2D" parent="." unique_id=200638705]
+position = Vector2(966, 524)
+emitting = false
+amount = 16
+texture = ExtResource("1_s4xvi")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 86.59
+gravity = Vector2(0, 100)
+initial_velocity_max = 159.57
+angular_velocity_max = 99.57
+
+[node name="Parallax" parent="." unique_id=1852961584 instance=ExtResource("2_a7xxg")]
+
+[node name="parallax-1" parent="Parallax" index="0" unique_id=1103408118]
+visible = false
+
+[node name="parallax-2" parent="Parallax" index="1" unique_id=1874628584]
+visible = true
+
+[node name="Player" parent="." unique_id=1465391525 instance=ExtResource("3_tmhiy")]
+position = Vector2(790, -55)
+limit_bottom = 928
+
+[node name="Goal" parent="." unique_id=1934961117 instance=ExtResource("4_qn2am")]
+position = Vector2(915, -58)
+
+[node name="Bubble" parent="." unique_id=1362069736 instance=ExtResource("5_c662y")]
+position = Vector2(827, 875)
+
+[node name="SharkPath" parent="." unique_id=796605821 instance=ExtResource("6_yujt5")]
+position = Vector2(536, 395)
+curve = SubResource("Curve2D_ilxbu")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath3" parent="." unique_id=1823726378 instance=ExtResource("6_yujt5")]
+position = Vector2(653, 783)
+curve = SubResource("Curve2D_r2dgo")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath4" parent="." unique_id=56218306 instance=ExtResource("6_yujt5")]
+position = Vector2(660, 233)
+curve = SubResource("Curve2D_6qwvb")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath9" parent="." unique_id=654278160 instance=ExtResource("6_yujt5")]
+visible = false
+position = Vector2(853, 117)
+curve = SubResource("Curve2D_w3cf3")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath8" parent="." unique_id=728267925 instance=ExtResource("6_yujt5")]
+position = Vector2(1002, 103)
+curve = SubResource("Curve2D_1h0f4")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath7" parent="." unique_id=1450860459 instance=ExtResource("6_yujt5")]
+position = Vector2(370, 168)
+curve = SubResource("Curve2D_1d27u")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath5" parent="." unique_id=414604793 instance=ExtResource("6_yujt5")]
+position = Vector2(446, 535)
+curve = SubResource("Curve2D_dpj73")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath6" parent="." unique_id=1746110444 instance=ExtResource("6_yujt5")]
+position = Vector2(860, 477)
+curve = SubResource("Curve2D_0r17i")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath10" parent="." unique_id=1175308896 instance=ExtResource("6_yujt5")]
+position = Vector2(817, 672)
+curve = SubResource("Curve2D_afsjk")
+travel_time = 6.0
+radius = 200.0
+
+[node name="SharkPath2" parent="." unique_id=1578293234 instance=ExtResource("6_yujt5")]
+position = Vector2(1033, 532)
+curve = SubResource("Curve2D_3mfy1")
+mode = 1
+lock_linear_path = true
+travel_time = 6.0
+radius = 200.0
+
+[node name="TileMap" parent="." unique_id=71163937 instance=ExtResource("7_w0bum")]
+tile_map_data = PackedByteArray("AAAWAPz/AAADACgAAAAWAP3/AAADACgAAAAWAP7/AAADACgAAAAWAP//AAADACgAAAAXAPv/AAADACgAAAAYAPv/AAADACgAAAAZAPv/AAADACgAAAAaAPv/AAADACgAAAAbAPv/AAADACgAAAAcAPv/AAADACgAAAAdAPv/AAADACgAAAAaAPz/AAADACgAAAAaAP3/AAADACgAAAAaAP7/AAADACgAAAAaAP//AAADACgAAAAeAPz/AAADACgAAAAeAP3/AAADACgAAAAeAP7/AAADACgAAAAeAP//AAADACgAAAAaAAAAAAADACgAAAAaAAEAAAADACgAAAAZAAEAAAADACgAAAAZAAIAAAADACgAAAAYAAIAAAADACgAAAAYAAMAAAADACgAAAAXAAMAAAADACgAAAAWAAQAAAADACgAAAAVAAQAAAADACgAAAAUAAQAAAADACgAAAAUAAUAAAADACgAAAATAAUAAAADACgAAAASAAUAAAADACgAAAARAAUAAAADACgAAAAQAAUAAAADACgAAAAPAAUAAAADACgAAAAOAAYAAAADACgAAAANAAYAAAADACgAAAANAAcAAAADACgAAAAWAAAAAAADACgAAAAVAAEAAAADACgAAAAUAAIAAAADACgAAAATAAIAAAADACgAAAASAAIAAAADACgAAAARAAIAAAADACgAAAAQAAIAAAADACgAAAAPAAIAAAADACgAAAAOAAIAAAADACgAAAANAAIAAAADACgAAAAMAAIAAAADACgAAAAMAAMAAAADACgAAAALAAMAAAADACgAAAAKAAMAAAADACgAAAAJAAQAAAADACgAAAAIAAQAAAADACgAAAAIAAUAAAADACgAAAAHAAUAAAADACgAAAAHAAYAAAADACgAAAAHAAcAAAADACgAAAAGAAcAAAADACgAAAAGAAgAAAADACgAAAAGAAkAAAADACgAAAAGAAoAAAADACgAAAAHAAoAAAADACgAAAAHAAsAAAADACgAAAAHAAwAAAADACgAAAAHAA0AAAADACgAAAAIAA0AAAADACgAAAAIAA4AAAADACgAAAAJAA4AAAADACgAAAAJAA8AAAADACgAAAAKABAAAAADACgAAAAKABEAAAADACgAAAALABEAAAADACgAAAALABIAAAADACgAAAAMABMAAAADACgAAAAMABQAAAADACgAAAANABQAAAADACgAAAANABUAAAADACgAAAANABYAAAADACgAAAAOABYAAAADACgAAAAOABcAAAADACgAAAAPABcAAAADACgAAAAPABgAAAADACgAAAAQABgAAAADACgAAAARABgAAAADACgAAAARABkAAAADACgAAAASABkAAAADACgAAAATABkAAAADACgAAAATABoAAAADACgAAAAUABoAAAADACgAAAAVABoAAAADACgAAAAWABoAAAADACgAAAAWABsAAAADACgAAAAXABsAAAADACgAAAAYABsAAAADACgAAAAYABwAAAADACgAAAAZABwAAAADACgAAAAaABwAAAADACgAAAAbABwAAAADACgAAAAcABsAAAADACgAAAAdABsAAAADACgAAAAeABoAAAADACgAAAAfABoAAAADACgAAAAfABkAAAADACgAAAAgABkAAAADACgAAAAgABgAAAADACgAAAAhABgAAAADACgAAAAhABcAAAADACgAAAAiABYAAAADACgAAAAjABYAAAADACgAAAAjABUAAAADACgAAAAkABUAAAADACgAAAAkABQAAAADACgAAAAlABQAAAADACgAAAAlABMAAAADACgAAAAmABMAAAADACgAAAAmABIAAAADACgAAAAnABIAAAADACgAAAAnABEAAAADACgAAAAoABEAAAADACgAAAAoABAAAAADACgAAAApABAAAAADACgAAAApAA8AAAADACgAAAAqAA8AAAADACgAAAAqAA4AAAADACgAAAArAA4AAAADACgAAAArAA0AAAADACgAAAAsAA0AAAADACgAAAAsAAwAAAADACgAAAAsAAsAAAADACgAAAAtAAsAAAADACgAAAAtAAoAAAADACgAAAAtAAkAAAADACgAAAAtAAgAAAADACgAAAAtAAcAAAADACgAAAAtAAYAAAADACgAAAAtAAUAAAADACgAAAAsAAUAAAADACgAAAArAAUAAAADACgAAAArAAQAAAADACgAAAAqAAQAAAADACgAAAApAAQAAAADACgAAAAoAAQAAAADACgAAAAnAAQAAAADACgAAAAmAAQAAAADACgAAAAlAAMAAAADACgAAAAkAAMAAAADACgAAAAjAAMAAAADACgAAAAiAAMAAAADACgAAAAiAAIAAAADACgAAAAhAAIAAAADACgAAAAhAAEAAAADACgAAAAgAAEAAAADACgAAAAgAAAAAAADACgAAAAfAAAAAAADACgAAAAfAP//AAADACgAAAAaAAIAAAADACgAAAAbAAIAAAADACgAAAAbAAMAAAADACgAAAAcAAMAAAADACgAAAAcAAQAAAADACgAAAAdAAQAAAADACgAAAAeAAUAAAADACgAAAAfAAUAAAADACgAAAAfAAYAAAADACgAAAAgAAYAAAADACgAAAAhAAcAAAADACgAAAAiAAcAAAADACgAAAAiAAgAAAADACgAAAAjAAgAAAADACgAAAAkAAkAAAADACgAAAAlAAkAAAADACgAAAAlAAoAAAADACgAAAAlAAsAAAADACgAAAAlAAwAAAADACgAAAAYABYAAAADACgAAAAXABYAAAADACgAAAAXABUAAAADACgAAAAXABQAAAADACgAAAAWABQAAAADACgAAAAWABMAAAADACgAAAAWABIAAAADACgAAAAWABEAAAADACgAAAAWABAAAAADACgAAAAXABAAAAADACgAAAAXAA8AAAADACgAAAAYAA8AAAADACgAAAAYAA4AAAADACgAAAAZAA0AAAADACgAAAAZAAwAAAADACgAAAAaAAwAAAADACgAAAAbAAwAAAADACgAAAAbAAsAAAADACgAAAAbAAoAAAADACgAAAAbAAkAAAADACgAAAAaAAkAAAADACgAAAAZAAkAAAADACgAAAAZAAgAAAADACgAAAAYAAgAAAADACgAAAAXAAgAAAADACgAAAAXAAkAAAADACgAAAAWAAkAAAADACgAAAAVAAkAAAADACgAAAAVAAoAAAADACgAAAAbABsAAAACACgAAAAaABgAAAACACgAAAAZABgAAAACACgAAAAZABkAAAACACgAAAAaABkAAAACACgAAAA=")
+
+[editable path="Parallax"]
